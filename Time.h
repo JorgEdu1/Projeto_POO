@@ -14,6 +14,7 @@ class Time:public Jogador{
         int empates = 0;
 
     public:
+        Time() = default;
         Time(std::string);
         //Gets
         std::string getNome();

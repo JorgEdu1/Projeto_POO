@@ -66,13 +66,3 @@ void Time::somaDerrotas(){
 void Time::somaEmpates(){
     empates++;
 }
-
-
-
-
-
-
-
-
-
-

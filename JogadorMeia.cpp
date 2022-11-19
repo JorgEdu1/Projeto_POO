@@ -18,6 +18,10 @@ int JogadorMeia::getVisao(){
     return this->visao;
 }
 
+int JogadorMeia::getHabilidade(){
+    return (habilidade*5) + (passe*3) + (drible*2)/10;
+}
+
 void JogadorMeia::setPasse(int passe){
     this->passe = passe;
 }

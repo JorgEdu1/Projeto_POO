@@ -12,6 +12,7 @@ class JogadorAtacante : public Jogador{
         int getFinalizacao();
         int getDrible();
         int getVelocidade();
+        int getHabilidade();
         void setFinalizacao(int finalizacao);
         void setDrible(int drible);
         void setVelocidade(int velocidade);

@@ -1,8 +1,7 @@
 #include "JogadorGoleiro.h"
 
-JogadorGoleiro::JogadorGoleiro(std::string nome, int idade, int habilidade, int gols, int camisa,int reflexo, int agilidade, int altura) : Jogador(nome, idade, habilidade, gols, camisa){
+JogadorGoleiro::JogadorGoleiro(std::string nome, int idade, int habilidade, int gols, int camisa,int reflexo, int altura) : Jogador(nome, idade, habilidade, gols, camisa){
     this->reflexo = reflexo;
-    this->agilidade = agilidade;
     this->altura = altura;
 }
 
@@ -10,20 +9,16 @@ int JogadorGoleiro::getReflexo(){
     return this->reflexo;
 }
 
-int JogadorGoleiro::getAgilidade(){
-    return this->agilidade;
-}
-
 int JogadorGoleiro::getAltura(){
     return this->altura;
 }
 
-void JogadorGoleiro::setReflexo(int reflexo){
-    this->reflexo = reflexo;
+int JogadorGoleiro::getHabilidade(){
+    return (habilidade*5) + (((int)(altura*100))*2) + (reflexo*3)/10;
 }
 
-void JogadorGoleiro::setAgilidade(int agilidade){
-    this->agilidade = agilidade;
+void JogadorGoleiro::setReflexo(int reflexo){
+    this->reflexo = reflexo;
 }
 
 void JogadorGoleiro::setAltura(int altura){

@@ -1,4 +1,5 @@
 #include "Jogador.h"
+using namespace std;
 
 Jogador::Jogador(std::string nome, int idade, int habilidade, int gols, int camisa){
     this->nome = nome;
@@ -36,4 +37,12 @@ void Jogador::setGols(int gols){
 }
 void Jogador::setCamisa(int camisa){
     this->camisa = camisa;
+}
+//Deve somar +1 em gols sempre que um jogador fizer um gol;
+void Jogador::somaGols(){
+    gols++;
+}
+
+void Jogador::printJogador(){
+    std::cout << "Nome: " << getNome() << ", idade: " << getIdade() << ", habilidade: " << getHabilidade() << ", gols: " << getGols() << ", camisa: " << getCamisa() << std::endl;
 }

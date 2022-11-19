@@ -1,8 +1,9 @@
 #include "Partidas.h"
 #include <iostream>
+#include <sstream>
 using namespace std;
 
-Partidas::Partidas(Date data, Time casa, Time visitante){
+Partidas::Partidas(int data, Time casa, Time visitante){
     dataJogo = data;
     timeCasa = casa;
     timeVisitante = visitante;
@@ -17,9 +18,7 @@ void Partidas::golVisitante(){
 }
 
 string Partidas::getPlacar(){
-    string result;
-    result += timeCasa.getNome() + " ";
-    result += placarCasa + " X ";
-    result += placarVisitante + " " + timeVisitante.getNome();
-    return result;
+    stringstream result;
+    result << timeCasa.getNome() << " " << placarCasa << " X " << placarVisitante << " " << timeVisitante.getNome();
+    return result.str();
 }

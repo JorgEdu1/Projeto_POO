@@ -18,6 +18,10 @@ int JogadorAtacante::getVelocidade(){
     return this->velocidade;
 }
 
+int JogadorAtacante::getHabilidade(){
+    return (habilidade*5) + (velocidade*2) + (finalizacao*3)/10;
+}
+
 void JogadorAtacante::setFinalizacao(int finalizacao){
     this->finalizacao = finalizacao;
 }

@@ -13,6 +13,11 @@ int JogadorDefesa::getDesarme(){
     return this->desarme;
 }
 
+int JogadorDefesa::getHabilidade(){
+    return (habilidade*5) + (marcacao*3) + (desarme*2)/10;
+
+}
+
 void JogadorDefesa::setMarcacao(int marcacao){
     this->marcacao = marcacao;
 }

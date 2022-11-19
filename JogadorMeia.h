@@ -13,6 +13,7 @@ class JogadorMeia : public Jogador{
         int getPasse();
         int getDrible();
         int getVisao();
+        int getHabilidade();
         void setPasse(int passe);
         void setDrible(int drible);
         void setVisao(int velocidade);

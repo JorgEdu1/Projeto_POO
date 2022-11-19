@@ -6,15 +6,13 @@
 class JogadorGoleiro : public Jogador{
     private:
         int reflexo;
-        int agilidade;
         int altura;
     public:
-        JogadorGoleiro(std::string nome, int idade, int habilidade, int gols, int camisa,int reflexo, int agilidade, int altura);
+        JogadorGoleiro(std::string nome, int idade, int habilidade, int gols, int camisa,int reflexo, int altura);
         int getReflexo();
-        int getAgilidade();
         int getAltura();
+        int getHabilidade();
         void setReflexo(int reflexo);
-        void setAgilidade(int agilidade);
         void setAltura(int altura);
 };
 

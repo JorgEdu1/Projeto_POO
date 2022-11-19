@@ -17,5 +17,7 @@ int main(){
 
     Vasco.insJogador(TimeVasco);
 
-    Vasco.imprimeTime();    
+    Vasco.imprimeTime();
+    cout << endl;    
+    cout << Vasco.getResultados();
 }

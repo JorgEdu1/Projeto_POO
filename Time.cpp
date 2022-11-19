@@ -53,11 +53,14 @@ void Time::insJogador(Jogador *team[11]){
 }
 
 string Time::getResultados(){
-    string frase;
-    frase += "Vitoria: " + getVitorias() ;
-    frase += ", Empates: " + getEmpates();
-    frase += ", Derrotas: " + getDerrotas();
-    return frase;
+
+    stringstream ss;
+    ss << "Vitoria: " << vitorias << ", Empates: " << empates << ", Derrotas: " << derrotas; 
+    // frase += "Vitoria: " + vitorias ;
+    // frase += ", Empates: " + empates;
+    // frase += ", Derrotas: " + derrotas;
+
+    return ss.str();
 }
 
 void Time::somaVitorias(){

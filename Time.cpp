@@ -41,12 +41,15 @@ void Time::setEmpates(int e){
 //Metodos membros
 void Time::imprimeTime(){
     for(int i = 0; i < 11 ;i++){
-        jogadores*[i].Jogador::printJogador();
+        jogadores[i]->Jogador::printJogador();
     }
+    //jogadores[2]->Jogador::printJogador();
 }
 
-void Time::insJogador(Jogador* team ){
-    *jogadores = team;
+void Time::insJogador(Jogador *team[11]){
+    for(int i = 0; i < 11; i++){
+        jogadores[i] = team[i];
+    }
 }
 
 string Time::getResultados(){

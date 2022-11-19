@@ -32,7 +32,7 @@ class Time:public Jogador{
         void somaVitorias();//ok
         void somaDerrotas();//ok
         void somaEmpates();//ok
-        void insJogador(Jogador*);//Metodo usado para colocar jogadores no time. ok
+        void insJogador(Jogador *[11]);//Metodo usado para colocar jogadores no time. ok
 
 };
 #endif

@@ -40,13 +40,13 @@ void Time::setEmpates(int e){
 
 //Metodos membros
 void Time::imprimeTime(){
-    for(int i = 0; i < jogadores.size(); i++){
-        jogadores[i].Jogador::printJogador();
+    for(int i = 0; i < 11 ;i++){
+        jogadores*[i].Jogador::printJogador();
     }
 }
 
-void Time::insJogador(vector<Jogador> &equipe){
-    jogadores = equipe;
+void Time::insJogador(Jogador* team ){
+    *jogadores = team;
 }
 
 string Time::getResultados(){

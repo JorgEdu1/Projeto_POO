@@ -1,18 +1,18 @@
 #include <iostream>
 #include <string>
-#include "Date.h"
+//#include "Date.h"
 #include "Time.h"
 
-class Partidas:public Time, Date{
+class Partidas:public Time{
     private:
-        Date data;
+        int data;
         Time timeCasa;
         Time timeVisitante;
         int placarCasa = 0; //começando a partida com 0 X 0
         int placarVisitante = 0;
 
     public:
-        Partidas(Date,Time,Time);
+        Partidas(int,Time,Time);
         void golCasa();
         void golVisitante();
         std::string getPlacar();

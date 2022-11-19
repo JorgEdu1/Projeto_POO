@@ -8,7 +8,7 @@
 class Time:public Jogador{
     private:
         std::string nome;
-        vector<Jogador> jogadores;
+        Jogador* jogadores[11];
         int vitorias = 0;
         int derrotas = 0; //Os 3 atributos inicializados com zero como pede o proj.
         int empates = 0;
@@ -32,7 +32,7 @@ class Time:public Jogador{
         void somaVitorias();//ok
         void somaDerrotas();//ok
         void somaEmpates();//ok
-        void insJogador(vector<Jogador> &equipe);//Metodo usado para colocar jogadores no time. ok
+        void insJogador(Jogador*);//Metodo usado para colocar jogadores no time. ok
 
 };
 #endif

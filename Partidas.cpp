@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-Partidas::Partidas(Date data, Time casa, Time visitante){
+Partidas::Partidas(int data, Time casa, Time visitante){
     this->data = data;
     timeCasa = casa;
     timeVisitante = visitante;

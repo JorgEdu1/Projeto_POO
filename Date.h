@@ -10,9 +10,9 @@ std::string days[] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri",
                       "Sat"};
 
 class Date{
-private:
-std::string month;
-std::string day;
+    private:
+        std::string month;
+        std::string day;
         int date;
         int year;
 

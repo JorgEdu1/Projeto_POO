@@ -119,7 +119,6 @@ int main(){
                 if(testaTime == false){
                     throw CustomExcep("Esse time nao esta inscrito!!");
                 }else{
-
                     if(entra == "Flamengo"){
                         insTime(Campeonato,search,entra,TimeFla);
 

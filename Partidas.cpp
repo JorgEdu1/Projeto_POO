@@ -19,6 +19,13 @@ void Partidas::golVisitante(){
     placarVisitante++;
 }
 
+void Partidas::desgolCasa(){
+    placarCasa--;
+}
+void Partidas::desgolVisitante(){
+    placarVisitante--;
+}
+
 string Partidas::getPlacar(){
     stringstream result;
     result << timeCasa->getNome() << " " << placarCasa << " X " << placarVisitante << " " << timeVisitante->getNome();

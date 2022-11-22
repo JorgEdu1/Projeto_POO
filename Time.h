@@ -6,6 +6,7 @@
 #include <sstream>
 #include "Jogador.h"
 
+
 class Time:public Jogador{
     private:
         std::string nome;
@@ -38,7 +39,8 @@ class Time:public Jogador{
 
         bool realPlayer(std::string); //Esse metodo retorna true se o jogador estiver no time
 
-        int getHabilidade(std::string); //Esse metodo retorna a habilidade do jogador passado
+        Jogador* getJogador(std::string);
+
         
 
 };

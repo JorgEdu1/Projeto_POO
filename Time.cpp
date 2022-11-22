@@ -86,11 +86,12 @@ bool Time::realPlayer(string p){
     return false;
 }
 
-int Time::getHabilidade(string p){
+Jogador* Time::getJogador(string nome){
     for(int i = 0; i < 11; i++){
-        if(jogadores[i]->getNome() == p){
-            return jogadores[i]->getHabilidade();
+        if(jogadores[i]->getNome() == nome){
+            return jogadores[i];
         }
     }
-    return 0;
+    //cout << "Jogador nao esta no time." << endl;
+    return nullptr;
 }

@@ -5,7 +5,7 @@ Jogador::Jogador(std::string nome, int idade, int habilidade, int gols, int cami
     this->nome = nome;
     this->idade = idade;
     this->habilidade = habilidade;
-    this->gols = gols;
+    this->gols = 0;
     this->camisa = camisa;
 }
 std::string Jogador::getNome(){

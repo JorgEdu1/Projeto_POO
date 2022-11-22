@@ -17,6 +17,8 @@ class Partidas:public Time, DateBasic{
         // ~Partidas() = default;
         void golCasa();
         void golVisitante();
+        void desgolCasa();
+        void desgolVisitante();
         std::string getPlacar();
         void fimJogo();
         std::string dataJogo();

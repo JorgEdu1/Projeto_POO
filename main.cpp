@@ -5,6 +5,11 @@
 #include "Time.h"
 #include "CustomException.h"
 #include <iostream>
+/*
+FALTA APENAS:
+a) Dado o nome do jogador, exibir o nome de todos os jogadores do time, "ordenados pelas classes derivadas". (Falta o entre aspas duplas).
+d) Dado a data da partida, exibir todas os times que jogaram naquele dia. (Falta tudo).
+*/
 using namespace std;
 
 //Essa funcao inclui os times no campeonato sem necessitar ficar repetindo as coisas no while.
@@ -291,6 +296,6 @@ int main(){
             }
         }
     }while(true);
-    
+
     return 0;
 }

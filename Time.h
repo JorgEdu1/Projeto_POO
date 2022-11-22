@@ -37,6 +37,8 @@ class Time:public Jogador{
         bool realTime(std::string); //Esse metodo retorna true se o nome do time passado estiver certo;
 
         bool realPlayer(std::string); //Esse metodo retorna true se o jogador estiver no time
+
+        int getHabilidade(std::string); //Esse metodo retorna a habilidade do jogador passado
         
 
 };

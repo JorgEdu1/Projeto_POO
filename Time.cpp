@@ -85,3 +85,12 @@ bool Time::realPlayer(string p){
     }
     return false;
 }
+
+int Time::getHabilidade(string p){
+    for(int i = 0; i < 11; i++){
+        if(jogadores[i]->getNome() == p){
+            return jogadores[i]->getHabilidade();
+        }
+    }
+    return 0;
+}

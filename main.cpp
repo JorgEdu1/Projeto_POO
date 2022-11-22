@@ -28,8 +28,16 @@ int main(){
     Time *Campeonato[4];
     int size = 0;
 
-    cout << "Ola! Bem vindo ao sistema de times." << endl << "Digite: " << endl << "1 -> Para inscrever um time." << endl << "2 -> Para ver todos os times inscritos." << endl << "3 -> Para procurar um jogador em um time." << endl << "4 -> Para trocar um time ja inscrito." << endl <<"10 -> Para ver este menu novamente." << endl << "999 -> Para encerrar o programa." << endl;
-
+    cout << "Ola! Bem vindo ao sistema de times." << endl << "Digite: " << endl << 
+    "1 -> Para inscrever um time." << endl << 
+    "2 -> Para ver todos os times inscritos." << endl << 
+    "3 -> Para procurar um jogador em um time." << endl << 
+    "4 -> Para trocar um time ja inscrito." << endl <<
+    "5 -> Para ver detalhe de um jogador de um time." << endl <<
+    "6 -> Para comecar uma partida." << endl <<
+    "7 -> Para saber como esta o time no campeonato." << endl <<
+    "10 -> Para ver este menu novamente." << endl << 
+    "999 -> Para encerrar o programa." << endl;
 
     do{
         int key = 0;
@@ -44,13 +52,10 @@ int main(){
             cin >> nome;
             if(nome == "Flamengo"){
                 insTime(Campeonato,size,nome,TimeFla);
-
             }else if(nome == "Vasco"){
                 insTime(Campeonato,size,nome,TimeVasco);
-
             }else if(nome == "Salgueiro"){
                 insTime(Campeonato,size,nome,TimeSalgueiro);
-
             }else if(nome == "Brasil"){
                 insTime(Campeonato,size,nome,TimeBrasil);
             }
@@ -63,11 +68,19 @@ int main(){
                 Campeonato[i]->imprimeTime();
                 cout << endl;
             }
-            
         }else if(key == 999){//Exit do programa;
             break;
         }else if(key == 10){
-            cout << "Digite: " << endl << "1 -> Para inscrever um time." << endl << "2 -> Para ver todos os times inscritos." << endl << "3 -> Para procurar um jogador em um time." << endl << "4 -> Para trocar um time ja inscrito." << endl <<"10 -> Para ver este menu novamente." << endl << "999 -> Para encerrar o programa." << endl;
+            cout << "Ola! Bem vindo ao sistema de times." << endl << "Digite: " << endl << 
+            "1 -> Para inscrever um time." << endl << 
+            "2 -> Para ver todos os times inscritos." << endl << 
+            "3 -> Para procurar um jogador em um time." << endl << 
+            "4 -> Para trocar um time ja inscrito." << endl <<
+            "5 -> Para ver detalhe de um jogador de um time." << endl <<
+            "6 -> Para comecar uma partida." << endl <<
+            "7 -> Para saber como esta o time no campeonato." << endl <<
+            "10 -> Para ver este menu novamente." << endl << 
+            "999 -> Para encerrar o programa." << endl;
         }else if(key == 3){
             cout << "Digite o nome do time seguido do nome do jogador que voce procura!. Ex: Flamengo DavidLuiz" << endl;
             string nometime;
@@ -121,13 +134,10 @@ int main(){
                 }else{
                     if(entra == "Flamengo"){
                         insTime(Campeonato,search,entra,TimeFla);
-
                     }else if(entra == "Vasco"){
                         insTime(Campeonato,search,entra,TimeVasco);
-
                     }else if(entra == "Salgueiro"){
                         insTime(Campeonato,search,entra,TimeSalgueiro);
-
                     }else if(entra == "Brasil"){
                         insTime(Campeonato,search,entra,TimeBrasil);
                     }
@@ -149,6 +159,13 @@ int main(){
                         cout << Campeonato[i]->getResultados() << endl;
                         testaTime = true;
                     }
+
+                    Jogador *aux = Campeonato[i]->getJogador(jogador);   
+                    if(jogador == aux->getNome()){
+                        aux->printJogador();
+                        cout << "Joga no: " << Campeonato[i]->getNome() << endl;
+                        break;
+                    }
                 }
                 if(testaTime == false){
                     throw CustomExcep("Esse jogador nao esta inscrito em nenhum time!!");
@@ -157,11 +174,10 @@ int main(){
                 cout << "ERROR: " << e.what() << endl;
             }
         }else if(key == 6){
-            //vou fazer uma partida;
+            //vou fazer uma partida entre dois times
             cout << "Digite quais times jogarao contra ? Ex. Flamengo(time casa) Vasco(time visitante)" << endl;
             string timeCasa;
             string timeVisitante;
-
             cin >> timeCasa >> timeVisitante;
 
             try{
@@ -178,7 +194,6 @@ int main(){
                 if(testaTimeCasa == false){
                     throw CustomExcep("Time da Casa nao esta inscrito no campeonato");
                 }
-
                 bool testaTimeVis = false;
                 int searchVis = 0;
                 for(int i = 0; i < size; i++){
@@ -195,7 +210,12 @@ int main(){
                 Partidas *jogo = new Partidas(Campeonato[searchCasa],Campeonato[searchVis],22,"Novembro",2022);
                 cout << "Time da casa e time visitante ja entraram em campo!" << endl;
                 do{
-                    cout << "Insira:" << endl << "1 -> Para gol do time da casa." << endl << "2 -> Para gol do time visitante" << endl << "3 -> Para ver o resultado atual da partida." << endl << "4 -> Para acabar a partida" << endl;
+                    cout << "Insira:" << endl << 
+                    "1 -> Para gol do time da casa." << endl << 
+                    "2 -> Para gol do time visitante." << endl << 
+                    "3 -> Para ver o resultado atual da partida." << endl << 
+                    "4 -> Para descobrir se o time eh mandante ou nao pelo nome." << endl <<
+                    "5 -> Para acabar a partida." << endl;
                     int command = 0;
                     cin >> command;
                     if(command == 1){
@@ -223,25 +243,29 @@ int main(){
                     }else if(command == 3){
                         cout << jogo->getPlacar() << endl;
                     }else if(command == 4){
+                        cout << "Descubra se o time eh da casa ou visitante digitando o nome: " << endl;
+                        string nome;
+                        cin >> nome;
+                        if(nome == jogo->getCasa()){
+                            cout << "Esse eh o time da casa!" << endl;
+                        }else if(nome == jogo->getVisitante()){
+                            cout << "Esse eh o time visitante!" << endl;
+                        }
+                    }else if(command == 5){
                         jogo->fimJogo();
                         delete jogo;
                         break;
                     }
-
-
-
                 }while(true);
             }catch(CustomExcep e){
                 cout << "ERROR: " << e.what() << endl;
             }
-
             // Partidas jogo(Campeonato[0],Campeonato[1],22,"Novembro",2022);
             // jogo.golCasa(); //Gol do flamengo
             // string nome  = {"Gabigol"};
             // Jogador *aux = Campeonato[0]->getJogador(nome);
             // aux->somaGols();
             // cout << aux->getGols();
-
         }else if(key == 7){
             //Quero saber a situação do meu time no campeonato até o momento.
             string nomeTime;
@@ -262,11 +286,11 @@ int main(){
                 }else{
                    cout << Campeonato[search]->getResultados() << endl;
                 }
-
             }catch(CustomExcep e){
                 cout << "ERROR: " << e.what() << endl;
             }
         }
     }while(true);
     
+    return 0;
 }

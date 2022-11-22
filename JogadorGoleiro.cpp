@@ -4,23 +4,18 @@ JogadorGoleiro::JogadorGoleiro(std::string nome, int idade, int habilidade, int 
     this->reflexo = reflexo;
     this->altura = altura;
 }
-
 int JogadorGoleiro::getReflexo(){
     return this->reflexo;
 }
-
 int JogadorGoleiro::getAltura(){
     return this->altura;
 }
-
 int JogadorGoleiro::getHabilidade(){
     return (habilidade*5) + (((int)(altura*100))*2) + (reflexo*3)/10;
 }
-
 void JogadorGoleiro::setReflexo(int reflexo){
     this->reflexo = reflexo;
 }
-
 void JogadorGoleiro::setAltura(int altura){
     this->altura = altura;
 }

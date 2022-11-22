@@ -5,31 +5,24 @@ JogadorAtacante::JogadorAtacante(std::string nome, int idade, int habilidade, in
     this->drible = drible;
     this->velocidade = velocidade;
 }
-
 int JogadorAtacante::getFinalizacao(){
     return this->finalizacao;
 }
-
 int JogadorAtacante::getDrible(){
     return this->drible;
 }
-
 int JogadorAtacante::getVelocidade(){
     return this->velocidade;
 }
-
 int JogadorAtacante::getHabilidade(){
     return (habilidade*5) + (velocidade*2) + (finalizacao*3)/10;
 }
-
 void JogadorAtacante::setFinalizacao(int finalizacao){
     this->finalizacao = finalizacao;
 }
-
 void JogadorAtacante::setDrible(int drible){
     this->drible = drible;
 }
-
 void JogadorAtacante::setVelocidade(int velocidade){
     this->velocidade = velocidade;
 }

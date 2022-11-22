@@ -34,6 +34,10 @@ class Time:public Jogador{
         void somaDerrotas();//ok
         void somaEmpates();//ok
         void insJogador(Jogador *[11]);//Metodo usado para colocar jogadores no time. ok
+        bool realTime(std::string); //Esse metodo retorna true se o nome do time passado estiver certo;
+
+        bool realPlayer(std::string); //Esse metodo retorna true se o jogador estiver no time
+        
 
 };
 #endif

@@ -10,10 +10,12 @@ Partidas::Partidas(Time* casa, Time* visitante, int d, string m, int y):DateBasi
 }
 
 void Partidas::golCasa(){
+    cout << "Gol do time da casa!!" << endl;
     placarCasa++;
 }
 
 void Partidas::golVisitante(){
+    cout << "Gol do time visitante!!" << endl;  
     placarVisitante++;
 }
 

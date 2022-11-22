@@ -72,3 +72,16 @@ void Time::somaDerrotas(){
 void Time::somaEmpates(){
     empates++;
 }
+
+bool Time::realTime(string n){
+    return nome == n;
+}
+
+bool Time::realPlayer(string p){
+    for(int i = 0; i < 11; i++){
+        if(jogadores[i]->getNome() == p){
+            return true;
+        }
+    }
+    return false;
+}

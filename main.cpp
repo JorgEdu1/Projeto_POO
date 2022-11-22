@@ -16,7 +16,7 @@ void insTime(Time *Camp[],int index,string n, Jogador*Jogs[]){
 }
 
 int main(){
-    Time *Campeonato[3];
+    Time *Campeonato[4];
 
 
 
@@ -40,15 +40,20 @@ int main(){
             }else if(nome == "Salgueiro"){
                 Jogador *TimeSalgueiro[] = {new JogadorAtacante("RonaldinhoPernambucano",22,10,1,9,7,1,2), new JogadorDefesa("Tiringa",23,0,0,1,10,2),new JogadorAtacante("Camavinga",22,10,1,9,7,1,2), new JogadorDefesa("Ganso",23,0,0,1,10,2),new JogadorAtacante("Alex",22,10,1,9,7,1,2), new JogadorDefesa("MagnoAlves",23,0,0,1,10,2),new JogadorAtacante("TiaDaCantina",22,10,1,9,7,1,2), new JogadorDefesa("JoaoGomes",23,0,0,1,10,2),new JogadorAtacante("Estacio",22,10,1,9,7,1,2), new JogadorDefesa("JojeDudu",23,0,0,1,10,2),new JogadorAtacante("Pente",22,10,1,9,7,1,2)};
                 insTime(Campeonato,index,nome,TimeSalgueiro);
+            }else if(nome == "Brasil"){
+                Jogador *TimeBrasil[] = {new JogadorAtacante("Neymar",22,10,1,9,7,1,2), new JogadorDefesa("Militao",23,0,0,1,10,2),new JogadorAtacante("Richarlison",22,10,1,9,7,1,2), new JogadorDefesa("Marquinhos",23,0,0,1,10,2),new JogadorAtacante("Raphinha",22,10,1,9,7,1,2), new JogadorDefesa("AlexTelles",23,0,0,1,10,2),new JogadorAtacante("ViniJr",22,10,1,9,7,1,2), new JogadorDefesa("AlexSandro",23,0,0,1,10,2),new JogadorAtacante("Paqueta",22,10,1,9,7,1,2), new JogadorDefesa("Casemiro",23,0,0,1,10,2),new JogadorAtacante("BrunoGuimaraes",22,10,1,9,7,1,2)};
+                insTime(Campeonato,index,nome,TimeBrasil);
             }
         }else if(key == 2){
-            for(int i = 0; i < 3; i++){
+            for(int i = 0; i < 4; i++){
                 Campeonato[i]->imprimeTime();
                 cout << endl;
             }
             // Campeonato[0]->imprimeTime();
             // Campeonato[1]->imprimeTime();
             // Campeonato[2]->imprimeTime();
+            
+        }else if(key == 999){//Exit do programa;
             break;
         }
 

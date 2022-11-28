@@ -5,9 +5,9 @@
 #include "Time.h"
 #include "CustomException.h"
 #include <iostream>
+#include <typeinfo>
 /*
 FALTA APENAS:
-a) Dado o nome do jogador, exibir o nome de todos os jogadores do time, "ordenados pelas classes derivadas". (Falta o entre aspas duplas).
 d) Dado a data da partida, exibir todas os times que jogaram naquele dia. (Falta tudo).
 */
 using namespace std;
@@ -21,7 +21,7 @@ void insTime(Time *Camp[],int index,string n, Jogador*Jogs[]){
 }
 
 int main(){
-
+    //Declaração de variaveis
     Jogador *TimeFla[] = {new JogadorAtacante("Gabigol",22,10,1,9,7,1,2), new JogadorDefesa("DavidLuiz",23,0,0,1,10,2),new JogadorAtacante("BrunoHenrique",22,10,1,9,7,1,2), new JogadorDefesa("LeoPereira",23,0,0,1,10,2),new JogadorAtacante("Pedro",22,10,1,9,7,1,2), new JogadorDefesa("Pablo",23,0,0,1,10,2),new JogadorAtacante("Arrascaeta",22,10,1,9,7,1,2), new JogadorDefesa("Cleiton",23,0,0,1,10,2),new JogadorAtacante("Everton",22,10,1,9,7,1,2), new JogadorDefesa("RodrigoCaio",23,0,0,1,10,2),new JogadorAtacante("Diego",22,10,1,9,7,1,2)};
 
     Jogador *TimeVasco[] = {new JogadorAtacante("Jorge",22,10,1,9,7,1,2), new JogadorDefesa("Erick",23,0,0,1,10,2),new JogadorAtacante("Matheus",22,10,1,9,7,1,2), new JogadorDefesa("Pedro",23,0,0,1,10,2),new JogadorAtacante("Gustavo",22,10,1,9,7,1,2), new JogadorDefesa("Guilherme",23,0,0,1,10,2),new JogadorAtacante("Clebao",22,10,1,9,7,1,2), new JogadorDefesa("Mendonza",23,0,0,1,10,2),new JogadorAtacante("Babigol",22,10,1,9,7,1,2), new JogadorDefesa("Nene",23,0,0,1,10,2),new JogadorAtacante("CacaRato",22,10,1,9,7,1,2)};

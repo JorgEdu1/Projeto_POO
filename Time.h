@@ -4,7 +4,11 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <typeinfo>
 #include "Jogador.h"
+#include "JogadorAtacante.h"
+#include "JogadorDefesa.h"
+#include "JogadorGoleiro.h"
 
 
 class Time:public Jogador{

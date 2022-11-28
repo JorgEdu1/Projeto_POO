@@ -32,8 +32,28 @@ void Time::setEmpates(int e){
 }
 //Metodos membros
 void Time::imprimeTime(){
+    std::cout << "Jogadores Goleiros: " << std::endl;
     for(int i = 0; i < 11 ;i++){
-        jogadores[i]->Jogador::printJogador();
+        const type_info& info1 = typeid(*jogadores[i]);
+        if(info1 == typeid(JogadorGoleiro)){
+            jogadores[i]->Jogador::printJogador();
+        }
+    }
+    std::cout << "--------------------------------" << std::endl;
+    std::cout << "Jogadores Defensores: " << std::endl;
+    for(int i = 0; i < 11 ;i++){
+        const type_info& info2 = typeid(*jogadores[i]);
+        if(info2 == typeid(JogadorDefesa)){
+            jogadores[i]->Jogador::printJogador();
+        }
+    }
+    std::cout << "--------------------------------" << std::endl;
+    std::cout << "Jogadores Atacantes: " << std::endl;
+    for(int i = 0; i < 11 ;i++){
+        const type_info& info3 = typeid(*jogadores[i]);
+        if(info3 == typeid(JogadorAtacante)){
+            jogadores[i]->Jogador::printJogador();
+        }
     }
     //jogadores[2]->Jogador::printJogador();
 }

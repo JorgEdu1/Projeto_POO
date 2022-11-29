@@ -32,30 +32,31 @@ void Time::setEmpates(int e){
 }
 //Metodos membros
 void Time::imprimeTime(){
+    /*uso da biblioteca typeinfo a class type_info que recebe um 
+    typeid de uma classe e armazena para verificaçao depois.*/
     std::cout << "Jogadores Goleiros: " << std::endl;
     for(int i = 0; i < 11 ;i++){
-        const type_info& info1 = typeid(*jogadores[i]);
-        if(info1 == typeid(JogadorGoleiro)){
+        const type_info& info1 = typeid(*jogadores[i]);//recebe o typeid do objeto[i].
+        if(info1 == typeid(JogadorGoleiro)){//verifica se o typeid do objeto[i] é igual ao typeid de jogador goleiro. 
             jogadores[i]->Jogador::printJogador();
         }
     }
     std::cout << "--------------------------------" << std::endl;
     std::cout << "Jogadores Defensores: " << std::endl;
     for(int i = 0; i < 11 ;i++){
-        const type_info& info2 = typeid(*jogadores[i]);
-        if(info2 == typeid(JogadorDefesa)){
+        const type_info& info2 = typeid(*jogadores[i]);//recebe o typeid do objeto[i]
+        if(info2 == typeid(JogadorDefesa)){//verifica se o typeid do objeto[i] é igual ao typeid de jogador defesa.
             jogadores[i]->Jogador::printJogador();
         }
     }
     std::cout << "--------------------------------" << std::endl;
     std::cout << "Jogadores Atacantes: " << std::endl;
     for(int i = 0; i < 11 ;i++){
-        const type_info& info3 = typeid(*jogadores[i]);
-        if(info3 == typeid(JogadorAtacante)){
+        const type_info& info3 = typeid(*jogadores[i]);//recebe o typeid do objeto[i]
+        if(info3 == typeid(JogadorAtacante)){//verifica se o typeid do objeto[i] é igual ao typeid de jogador atacante.
             jogadores[i]->Jogador::printJogador();
         }
     }
-    //jogadores[2]->Jogador::printJogador();
 }
 void Time::insJogador(Jogador *team[11]){
     for(int i = 0; i < 11; i++){

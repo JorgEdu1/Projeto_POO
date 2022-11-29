@@ -1,7 +1,7 @@
 #include "Jogador.h"
 using namespace std;
 
-Jogador::Jogador(std::string nome, int idade, int habilidade, int gols, int camisa){
+Jogador::Jogador(std::string nome, int idade, int habilidade, int gols, int camisa){    // Construtor
     this->nome = nome;
     this->idade = idade;
     this->habilidade = habilidade;
@@ -42,7 +42,7 @@ void Jogador::setCamisa(int camisa){
 void Jogador::somaGols(){
     gols++;
 }
-
+//Printa os dados do jogador;
 void Jogador::printJogador(){
     std::cout << "Nome: " << getNome() << ", idade: " << getIdade() << ", habilidade: " << getHabilidade() << ", gols: " << getGols() << ", camisa: " << getCamisa() << std::endl;
 }

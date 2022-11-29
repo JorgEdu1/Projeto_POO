@@ -126,17 +126,17 @@ int main(){
             try{
                 bool testaTime = false;
                 int search = 0;
-                for(int i = 0; i < size; i++){
-                    testaTime = Campeonato[i]->realTime(sai);
-                    if(testaTime == true){
+                for(int i = 0; i < size; i++){  //busca o time no campeonato
+                    testaTime = Campeonato[i]->realTime(sai); //testa se o time na posicao i e o desejado, caso sim altera o valor de testaTime para true.
+                    if(testaTime == true){  //se existir, termina a busca e grava o indice do time.
                         search = i;
                         cout << "Time encontrado!! Vamos troca-lo!" << endl;
                         break;
                     }
                 }
-                if(testaTime == false){
+                if(testaTime == false){ //se o time nao existir dentro do campeonato, joga exececao.
                     throw CustomExcep("Esse time nao esta inscrito!!");
-                }else{
+                }else{ //escolhe o time que ira entrar no lugar do outro.
                     if(entra == "Flamengo"){
                         insTime(Campeonato,search,entra,TimeFla);
                     }else if(entra == "Vasco"){
@@ -159,20 +159,20 @@ int main(){
             try{
                 bool testaTime = false;
                 int search = 0;
-                for(int i = 0; i < size; i++){
-                    if(Campeonato[i]->realPlayer(jogador)){
+                for(int i = 0; i < size; i++){  //testa se o jogador existe em algum time
+                    if(Campeonato[i]->realPlayer(jogador)){ //se achar o jogador, printa os resultados do time.
                         cout << Campeonato[i]->getResultados() << endl;
                         testaTime = true;
                     }
 
                     Jogador *aux = Campeonato[i]->getJogador(jogador);   
-                    if(jogador == aux->getNome()){
+                    if(jogador == aux->getNome()){  //printa o jogador e o time que ele pertence.
                         aux->printJogador();
                         cout << "Joga no: " << Campeonato[i]->getNome() << endl;
                         break;
                     }
                 }
-                if(testaTime == false){
+                if(testaTime == false){ //se nao existir, joga exececao.
                     throw CustomExcep("Esse jogador nao esta inscrito em nenhum time!!");
                 }
             }catch(CustomExcep e){
@@ -188,35 +188,33 @@ int main(){
             int year;
             cin >> timeCasa >> timeVisitante >> day >> month >> year;
 
-
             try{
                 bool testaTimeCasa = false;
                 int searchCasa = 0;
-                for(int i = 0; i < size; i++){
-                    testaTimeCasa = Campeonato[i]->realTime(timeCasa);
-                    if(testaTimeCasa == true){
+                for(int i = 0; i < size; i++){ //procura o time que tem aquele nome.
+                    testaTimeCasa = Campeonato[i]->realTime(timeCasa); //testa se o time na posicao i e o desejado, caso sim altera o valor de testaTimeCasa para true.
+                    if(testaTimeCasa == true){ //se existir, termina a busca e grava o indice do time da casa.
                         searchCasa = i;
-                        
                         break;
                     }
                 }
-                if(testaTimeCasa == false){
+                if(testaTimeCasa == false){ //se nao existir, joga exececao.
                     throw CustomExcep("Time da Casa nao esta inscrito no campeonato");
                 }
                 bool testaTimeVis = false;
                 int searchVis = 0;
-                for(int i = 0; i < size; i++){
-                    testaTimeVis = Campeonato[i]->realTime(timeVisitante);
-                    if(testaTimeVis == true){
+                for(int i = 0; i < size; i++){  //procura o time que tem aquele nome.
+                    testaTimeVis = Campeonato[i]->realTime(timeVisitante); //testa se o time na posicao i e o desejado, caso sim altera o valor de testaTimeVis para true.
+                    if(testaTimeVis == true){   //se existir, termina a busca e grava o indice do time visitante.
                         searchVis = i;
                         break;
                     }
                 }
-                if(testaTimeVis == false){
+                if(testaTimeVis == false){  //se nao existir, joga exececao.
                     throw CustomExcep("Time visitante nao esta inscrito no campeonato");
                 }
 
-                Partidas *jogo = new Partidas(Campeonato[searchCasa],Campeonato[searchVis],day,month,year);
+                Partidas *jogo = new Partidas(Campeonato[searchCasa],Campeonato[searchVis],day,month,year); //cria um objeto do tipo Partidas com os times escolhidos e a data.
                 cout << "Time da casa e time visitante ja entraram em campo!" << endl;
                 do{
                     cout << "Insira:" << endl << 
@@ -227,43 +225,43 @@ int main(){
                     "5 -> Para acabar a partida." << endl;
                     int command = 0;
                     cin >> command;
-                    if(command == 1){
+                    if(command == 1){   //se o comando for 1, o time da casa faz um gol.
                         string jog;
                         cout << "Digite o nome do jogador que fez o gol." << endl;
                         cin >> jog;
-                        Jogador*aux = Campeonato[searchCasa]->getJogador(jog);
-                        if(aux == nullptr){
+                        Jogador*aux = Campeonato[searchCasa]->getJogador(jog);  //pega o jogador que fez o gol.
+                        if(aux == nullptr){ //se o jogador nao existir, o gol nao e contabilizado.
                             cout << "Este jogador nao esta no time, gol ANULADO!" << endl;
                         }else{
-                            aux->somaGols();
-                            jogo->golCasa();
+                            aux->somaGols();    //soma um gol no jogador.
+                            jogo->golCasa();    //soma um gol no time da casa.
                         }
-                    }else if(command == 2){
+                    }else if(command == 2){ //se o comando for 2, o time visitante faz um gol.
                         string jog;
                         cout << "Digite o nome do jogador que fez o gol." << endl;
                         cin >> jog;
-                        Jogador*aux = Campeonato[searchVis]->getJogador(jog);
-                        if(aux == nullptr){
+                        Jogador*aux = Campeonato[searchVis]->getJogador(jog);   //pega o jogador que fez o gol.
+                        if(aux == nullptr){ //se o jogador nao existir, o gol nao e contabilizado.
                             cout << "Este jogador nao esta no time, gol ANULADO!" << endl;
                         }else{
-                            aux->somaGols();
-                            jogo->golVisitante();
+                            aux->somaGols();    //soma um gol no jogador.
+                            jogo->golVisitante();   //soma um gol no time visitante.
                         }
-                    }else if(command == 3){
-                        cout << jogo->getPlacar() << endl;
-                    }else if(command == 4){
+                    }else if(command == 3){ //se o comando for 3, printa o resultado atual da partida.
+                        cout << jogo->getPlacar() << endl;  //printa o placar atual.
+                    }else if(command == 4){ //se o comando for 4, printa se o time eh mandante ou nao.
                         cout << "Descubra se o time eh da casa ou visitante digitando o nome: " << endl;
                         string nome;
                         cin >> nome;
-                        if(nome == jogo->getCasa()){
+                        if(nome == jogo->getCasa()){    //se o nome for igual ao nome do time da casa, printa que ele e mandante.
                             cout << "Esse eh o time da casa!" << endl;
-                        }else if(nome == jogo->getVisitante()){
+                        }else if(nome == jogo->getVisitante()){ //se nao, printa que ele e visitante.
                             cout << "Esse eh o time visitante!" << endl;
                         }
-                    }else if(command == 5){
-                        jogo->fimJogo();
-                        delete jogo;
-                        break;
+                    }else if(command == 5){ //se o comando for 5, acaba a partida.
+                        jogo->fimJogo();    //chama o metodo fimJogo() que altera o valor de jogoAtivo para false.
+                        delete jogo;        //deleta o objeto jogo.
+                        break;              //termina o loop do menu da partida.
                     }
                 }while(true);
             }catch(CustomExcep e){
@@ -283,16 +281,16 @@ int main(){
             try{    
                 bool testaTime = false;
                 int search = 0;
-                for(int i = 0; i < size; i++){
-                    testaTime = Campeonato[i]->realTime(nomeTime);
-                    if(testaTime == true){
+                for(int i = 0; i < size; i++){ //procura o time que tem aquele nome.
+                    testaTime = Campeonato[i]->realTime(nomeTime);  //testa se o time na posicao i e o desejado, caso sim altera o valor de testaTime para true.
+                    if(testaTime == true){  //se existir, termina a busca e grava o indice do time.
                         search = i;;
                         break;
                     }
                 }
-                if(testaTime == false){
+                if(testaTime == false){ //se nao existir, joga exececao.
                     throw CustomExcep("Esse time nao esta inscrito!!");
-                }else{
+                }else{  //se existir, printa o resultado do time.
                    cout << Campeonato[search]->getResultados() << endl;
                 }
             }catch(CustomExcep e){

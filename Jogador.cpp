@@ -1,13 +1,15 @@
 #include "Jogador.h"
 using namespace std;
 
-Jogador::Jogador(std::string nome, int idade, int habilidade, int gols, int camisa){    // Construtor
+//Construtor padrão
+Jogador::Jogador(std::string nome, int idade, int habilidade, int gols, int camisa){
     this->nome = nome;
     this->idade = idade;
     this->habilidade = habilidade;
     this->gols = 0;
     this->camisa = camisa;
 }
+//Gets
 std::string Jogador::getNome(){
     return this->nome;
 }
@@ -23,6 +25,8 @@ int Jogador::getGols(){
 int Jogador::getCamisa(){
     return this->camisa;
 }
+
+//Sets
 void Jogador::setNome(std::string nome){
     this->nome = nome;
 }
@@ -38,6 +42,7 @@ void Jogador::setGols(int gols){
 void Jogador::setCamisa(int camisa){
     this->camisa = camisa;
 }
+
 //Deve somar +1 em gols sempre que um jogador fizer um gol;
 void Jogador::somaGols(){
     gols++;

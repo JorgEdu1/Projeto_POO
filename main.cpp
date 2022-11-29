@@ -6,10 +6,7 @@
 #include "CustomException.h"
 #include <iostream>
 #include <typeinfo>
-/*
-FALTA APENAS:
-d) Dado a data da partida, exibir todas os times que jogaram naquele dia. (Falta tudo).
-*/
+
 using namespace std;
 
 //Essa funcao inclui os times no campeonato sem necessitar ficar repetindo as coisas no while.
@@ -267,12 +264,6 @@ int main(){
             }catch(CustomExcep e){
                 cout << "ERROR: " << e.what() << endl;
             }
-            // Partidas jogo(Campeonato[0],Campeonato[1],22,"Novembro",2022);
-            // jogo.golCasa(); //Gol do flamengo
-            // string nome  = {"Gabigol"};
-            // Jogador *aux = Campeonato[0]->getJogador(nome);
-            // aux->somaGols();
-            // cout << aux->getGols();
         }else if(key == 7){
             //Quero saber a situação do meu time no campeonato até o momento.
             string nomeTime;

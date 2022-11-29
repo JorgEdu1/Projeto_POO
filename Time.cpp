@@ -55,21 +55,20 @@ void Time::imprimeTime(){
             jogadores[i]->Jogador::printJogador();
         }
     }
-    //jogadores[2]->Jogador::printJogador();
 }
+//Esse metodo inscreve os jogadores no Time ja criado.
 void Time::insJogador(Jogador *team[11]){
     for(int i = 0; i < 11; i++){
         jogadores[i] = team[i];
     }
 }
+//Esse metodo retorna uma string no formato solicitado.
 string Time::getResultados(){
     stringstream ss;
     ss << "Partidas Totais: " << vitorias+empates+derrotas << ", Vitoria: " << vitorias << ", Empates: " << empates << ", Derrotas: " << derrotas; 
-    // frase += "Vitoria: " + vitorias ;
-    // frase += ", Empates: " + empates;
-    // frase += ", Derrotas: " + derrotas;
     return ss.str();
 }
+//Os 3 metodos abaixos são chamados apenas no fim de cada partida na classe Partida.
 void Time::somaVitorias(){
     vitorias++;
 }
@@ -79,9 +78,11 @@ void Time::somaDerrotas(){
 void Time::somaEmpates(){
     empates++;
 }
+//Metodo criado e utilizado para lógicas implementadas na main.cpp
 bool Time::realTime(string n){
     return nome == n;
 }
+//Metodo criado e utilizado para lógicas implementadas na main.cpp
 bool Time::realPlayer(string p){
     for(int i = 0; i < 11; i++){
         if(jogadores[i]->getNome() == p){
@@ -90,12 +91,12 @@ bool Time::realPlayer(string p){
     }
     return false;
 }
+//Metodo criado e utilizado para lógicas implementadas na main.cpp
 Jogador* Time::getJogador(string nome){
     for(int i = 0; i < 11; i++){
         if(jogadores[i]->getNome() == nome){
             return jogadores[i];
         }
     }
-    //cout << "Jogador nao esta no time." << endl;
     return nullptr;
 }

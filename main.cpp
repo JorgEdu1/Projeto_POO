@@ -47,14 +47,13 @@ int main(){
     do{
         int key = 0;
         cin >> key;
-        // 1 - Para incluir o time X no Campeonato no Index;
-        if(key == 1){
-
+        if(key == 1){// 1 - Para incluir o time X no Campeonato no Index;
             string nome;
             //int index = 0;
             cout << "Digite o nome do time e ele sera inserido no campeonato!" << endl;
             cout << "Times disponiveis para inscricao: Flamengo, Vasco, Salgueiro e Brasil" << endl;
             cin >> nome;
+            //IFs aninhados para inserir o time no campeonato
             if(nome == "Flamengo"){
                 insTime(Campeonato,size,nome,TimeFla);
             }else if(nome == "Vasco"){
@@ -68,6 +67,7 @@ int main(){
                 size++;
             }
         }else if(key == 2){
+            //printar os jogadores do time ordenados por tipo de jogador
             for(int i = 0; i < size; i++){
                 cout << "====================== " << Campeonato[i]->getNome() << " ====================== " << endl;
                 Campeonato[i]->imprimeTime();
@@ -75,7 +75,7 @@ int main(){
             }
         }else if(key == 999){//Exit do programa;
             break;
-        }else if(key == 10){
+        }else if(key == 10){//Printar o menu novamente;
             cout << "Ola! Bem vindo ao sistema de times." << endl << "Digite: " << endl << 
             "1 -> Para inscrever um time." << endl << 
             "2 -> Para ver todos os times inscritos." << endl << 
@@ -86,7 +86,7 @@ int main(){
             "7 -> Para saber como esta o time no campeonato." << endl <<
             "10 -> Para ver este menu novamente." << endl << 
             "999 -> Para encerrar o programa." << endl;
-        }else if(key == 3){
+        }else if(key == 3){//Procurar um jogador em um time;
             cout << "Digite o nome do time seguido do nome do jogador que voce procura!. Ex: Flamengo DavidLuiz" << endl;
             string nometime;
             string nomejog;
@@ -95,7 +95,7 @@ int main(){
             try{
                 bool testaTime = false;
                 int search = 0;
-                for(int i = 0; i < size; i++){
+                for(int i = 0; i < size; i++){//procura o time que tem aquele nome.
                     testaTime = Campeonato[i]->realTime(nometime);
                     if(testaTime == true){
                         search = i;
@@ -103,12 +103,12 @@ int main(){
                         break;
                     }
                 }
-                if(testaTime == false){
+                if(testaTime == false){//Se o time nao for encontrado, ele nao checa se o jogador esta no time.
                     throw CustomExcep("Esse time nao esta inscrito!!");
                 }
 
                 bool testaJogador = Campeonato[search]->realPlayer(nomejog);
-                if(testaJogador){
+                if(testaJogador){//printa o time ao encontar o jogador, ou não
                     cout << "Jogador encontrado, este eh o seu time:" << endl;
                     Campeonato[search]->imprimeTime();
                 }else{
@@ -117,7 +117,7 @@ int main(){
             }catch(CustomExcep e){
                 cout << "ERROR: " << e.what() << endl;
             }
-        }else if(key == 4){
+        }else if(key == 4){//substitui um time 
             cout << "Digite o nome do time a ser substituido e o nome do time que ira entrar no lugar." << endl;
             string sai;
             string entra;

@@ -180,10 +180,14 @@ int main(){
             }
         }else if(key == 6){
             //vou fazer uma partida entre dois times
-            cout << "Digite quais times jogarao contra ? Ex. Flamengo(time casa) Vasco(time visitante)" << endl;
+            cout << "Digite quais times jogarao contra seguido da data. Ex. Flamengo(time casa) Vasco(time visitante) 22 10 2022" << endl;
             string timeCasa;
             string timeVisitante;
-            cin >> timeCasa >> timeVisitante;
+            int day;
+            int month;
+            int year;
+            cin >> timeCasa >> timeVisitante >> day >> month >> year;
+
 
             try{
                 bool testaTimeCasa = false;
@@ -212,7 +216,7 @@ int main(){
                     throw CustomExcep("Time visitante nao esta inscrito no campeonato");
                 }
 
-                Partidas *jogo = new Partidas(Campeonato[searchCasa],Campeonato[searchVis],22,"Novembro",2022);
+                Partidas *jogo = new Partidas(Campeonato[searchCasa],Campeonato[searchVis],day,month,year);
                 cout << "Time da casa e time visitante ja entraram em campo!" << endl;
                 do{
                     cout << "Insira:" << endl << 

@@ -3,7 +3,11 @@
 #include <sstream>
 using namespace std;
 
-Partidas::Partidas(Time* casa, Time* visitante, int d, string m, int y):DateBasic(d,m,y){
+/*
+Construtor que inicializa os atributos de Partida com os Times recebidos, os outros atributos passados (DATAS)
+são passados de forma explicita ao construtor de DateBasic para que seja colocado a data da partida.
+*/
+Partidas::Partidas(Time* casa, Time* visitante, int d, int m, int y):DateBasic(d,m,y){
     //dataJogo = data;
     timeCasa = casa;
     timeVisitante = visitante;

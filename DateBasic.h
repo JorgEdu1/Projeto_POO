@@ -7,16 +7,17 @@
 class DateBasic{
     private:
         int day;
-        std::string month;
+        int month;
         int year;
 
     public:
         DateBasic() = default;
-        DateBasic(int d, std::string m, int y){
+        DateBasic(int d, int m, int y){
             day = d;
             month = m;
             year = y;
         }
+        
         std::string datePrint(){
             std::stringstream ss;
             ss << day << " de " << month << " de " << year;

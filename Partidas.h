@@ -13,7 +13,7 @@ class Partidas:public Time, DateBasic{
         int placarVisitante = 0;
 
     public:
-        Partidas(Time*,Time*,int,std::string,int);
+        Partidas(Time*,Time*,int,int,int);
         // ~Partidas() = default;
         std::string getCasa();
         std::string getVisitante(); 

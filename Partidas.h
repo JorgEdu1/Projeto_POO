@@ -14,13 +14,10 @@ class Partidas:public Time, DateBasic{
 
     public:
         Partidas(Time*,Time*,int,int,int);
-        // ~Partidas() = default;
         std::string getCasa();
         std::string getVisitante(); 
         void golCasa();
         void golVisitante();
-        void desgolCasa();
-        void desgolVisitante();
         std::string getPlacar();
         void fimJogo();
         std::string dataJogo();

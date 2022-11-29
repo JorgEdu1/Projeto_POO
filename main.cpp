@@ -73,7 +73,8 @@ int main(){
         }else if(key == 999){//Exit do programa;
             break;
         }else if(key == 10){//Printar o menu novamente;
-            cout << "Ola! Bem vindo ao sistema de times." << endl << "Digite: " << endl << 
+            system("clear||cls");
+            cout << "Digite: " << endl << 
             "1 -> Para inscrever um time." << endl << 
             "2 -> Para ver todos os times inscritos." << endl << 
             "3 -> Para procurar um jogador em um time." << endl << 

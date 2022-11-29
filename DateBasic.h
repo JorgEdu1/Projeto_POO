@@ -20,6 +20,7 @@ class DateBasic{
         
         std::string datePrint(){
             std::stringstream ss;
+            //IFs aninhados para retornar o mes por extenso;
             if(month == 1){
                 ss << day << " de Janeiro de " << year;
             }
